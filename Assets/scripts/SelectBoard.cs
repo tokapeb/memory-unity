@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
+using UnityEngine.SceneManagement;
 
 public class SelectBoard : MonoBehaviour {
 
@@ -138,5 +139,11 @@ public class SelectBoard : MonoBehaviour {
         for (int i = 0; i < imageList.Count; i++) { 
             Debug.Log(imageList[i].url.Replace("imageAttr", "237x"));
         }
+
+        loadMain();
+    }
+
+    public void loadMain() {
+        SceneManager.LoadScene ("main", LoadSceneMode.Single);
     }
 }
